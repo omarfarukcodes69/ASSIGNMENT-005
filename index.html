@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Hotline</title>
     <!-- ----------- awasome cdn link --------  -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- -------- DaisyUI cdn -------------  -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- -------------tailwind cdn -----------  -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body>
-    <h2 class="text-xl">Emergency Hotline </h2>
+
+<body class=" bg-[#F5FFF6] max-w-[1920px] h-[100vh]">
+    <header class="">
+        <nav class=" bg-white px-15 py-6 flex justify-between items-center">
+            <aside class="logo-side flex gap-[10px] items-center">
+                <img src="./assets/logo.png" alt="" class=" w-[50px] h-[50px]">
+                <h1 class=" text-xl font-extrabold text-[#006747]">Emergency <br> Service </h1>
+            </aside>
+            <aside class="Navigation-side flex gap-5   justify-center items-center ">
+                <div class="button flex gap-2 bg-[#ECFFF0] px-5 py-3 rounded-3xl">
+                    <p class=" text-[16px] font-bold text-black">0</p>
+                    <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
+                </div>
+                <div class="button flex gap-2 bg-[#ECFFF0] px-5 py-3 rounded-3xl">
+                    <p class=" text-[16px] font-bold text-black">100</p>
+                    <img class="w-[30px] h-[30px]" src="./assets/coin.png" alt="">
+                </div>
+                <div class="button flex gap-2 bg-[#00A63E] px-9 py-3 rounded-3xl">
+                    <p class=" text-[16px] font-bold text-white">0</p>
+                    <h2 class="  text-[16px] font-bold text-white">Copy</h2>
+                </div>
+            </aside>
+        </nav>
+        <div class="header-bannar  bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]   text-center text-white  px-15 py-6">
+            <img class=" w-[92px] h-[92px] mx-auto" src="./assets/logo-dark.png" alt="">
+            <h1 class="py-3 text-[40px] font-bold">Emergency Service Directory</h1>
+            <p class=" text-[20px] font-semibold">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
+        </div>
+    </header>
 
 
     <script src="./index.js"></script>
 </body>
+
 </html>
