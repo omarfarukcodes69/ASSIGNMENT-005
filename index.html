@@ -25,7 +25,7 @@
             </aside>
             <aside class="Navigation-side flex gap-5   justify-center items-center ">
                 <div class="button flex gap-2 bg-[#ECFFF0] px-5 py-3 rounded-3xl">
-                    <p class=" text-[16px] font-bold text-black">0</p>
+                    <p id="total-heart" class=" text-[16px] font-bold text-black">0</p>
                     <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
                 </div>
                 <div class="button flex gap-2 bg-[#ECFFF0] px-5 py-3 rounded-3xl">
@@ -46,15 +46,14 @@
                 Government of the People’s Republic of Bangladesh</p>
         </div>
     </header>
-
     <!-- -------main seection / body section --------  -->
-    <main class=" max-w-[1920px] m-10 grid grid-cols-4 gap-[30px] p-4">
+    <main id="all-cards" class=" max-w-[1920px]  m-10 grid grid-cols-4 gap-[30px] p-4">
         <!-- Row 1 -->
         <!-- ----- card-1 ----- -->
-        <section class=" card-1 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/emergency.png" alt="">
-                <i class="fa-regular fa-heart text-2xl"></i>
+                <i id="heart-btn" class="fa-solid fa-heart text-2xl"></i>
             </div>
             <div class="card-description mt-4">
                 <h2 class="text-lg text-black font-bold">National Emergency Number</h2>
@@ -65,15 +64,15 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-2 ----- -->
-        <section class=" card-2  max-w-full max-h-full p-8 rounded-xl shadow-xl bg-white">
+        <section class="card  max-w-full max-h-[360px] p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#DFEFFF] rounded-2xl" src="./assets/police.png" alt="">
-                <i class="fa-regular fa-heart text-2xl"></i>
+                <i id="heart-btn" class="fa-solid fa-heart text-2xl"></i>
             </div>
             <div class="card-description mt-4">
                 <h2 class="text-lg text-black font-bold">Police Helpline Number</h2>
@@ -84,12 +83,12 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-3 ----- -->
-        <section class=" card-3 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/fire-service.png"
                     alt="">
@@ -104,37 +103,31 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
 
         <!-- ---------------- side card section ---------------------------- -->
-        <section class=" card-4 max-w-full max-h-full row-span-3 p-6 rounded-xl shadow-xl bg-white">
+        <section class="side-card max-w-full max-h-[150vh] row-span-3 p-6 rounded-xl shadow-xl bg-white overflow-hidden">
             <div class="history-title flex justify-between items-center">
                 <div class="title text-lg flex gap-2 justify-start items-center">
                     <i class="fa-solid fa-clock-rotate-left"></i>
                     <h1 class=" font-semibold">Call History</h1>
                 </div>
-                <button class="btn px-6  py-4 rounded-3xl bg-[#00A63E] text-sm text-white">Clear</button>
+                <button id="clear-btn" class="btn px-6 py-4 rounded-3xl bg-[#00A63E] text-sm text-white">Clear</button>
             </div>
 
             <!-- ------- history- cards section ------  -->
-             <div class="history-cards my-4">
-                <div class="history-card bg-gray-100 my-2 p-4 flex justify-between items-center rounded-lg">
-                    <div>
-                        <h1 class=" text-md font-semibold ">Service Name</h1>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <h1 class="text-md text-gray-500">11:00:30 AM</h1>
-                </div>
-             </div>
+            <div id="history-container" class="history-cards my-4">
+
+            </div>
         </section>
 
 
         <!-- Row 2 -->
         <!-- ----- card-4 ----- -->
-        <section class=" card-4 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/ambulance.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -148,12 +141,12 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-5 ----- -->
-        <section class=" card-5 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/emergency.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -167,12 +160,12 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-6 ----- -->
-        <section class=" card-6 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/emergency.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -186,14 +179,14 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
 
         <!-- Row 3 -->
         <!-- ----- card-7 ----- -->
-        <section class=" card-7 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/ambulance.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -208,12 +201,12 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-8 ----- -->
-        <section class=" card-8 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/emergency.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -227,12 +220,12 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
         <!-- ----- card-9 ----- -->
-        <section class=" card-9 max-w-full max-h-full  p-8 rounded-xl shadow-xl bg-white">
+        <section class="card max-w-full max-h-[360px]  p-8 rounded-xl shadow-xl bg-white">
             <div class="card-icons flex justify-between items-center ">
                 <img class="  w-[60px] h-[60px] p-[14px] bg-[#FFE3E2] rounded-2xl" src="./assets/emergency.png" alt="">
                 <i class="fa-regular fa-heart text-2xl"></i>
@@ -246,7 +239,7 @@
             <div class="card-buttons flex gap-2 justify-center items-center">
                 <button class="btn w-[45%] text-lg text-gray-500"><span><i
                             class="fa-regular fa-copy"></i></span>Copy</button>
-                <button class="btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
+                <button class="call-btn btn w-[45%]  bg-[#00A63E] text-lg text-white"><span> <i
                             class="fa-solid fa-phone"></i></span>Call</button>
             </div>
         </section>
