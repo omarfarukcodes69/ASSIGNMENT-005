@@ -11,30 +11,42 @@ function getClass(className) {
 }
 
 // .............. heart button click even -------------
-let countHeartClick = 0;
-let toggole = true;
-getId("heart-btn").addEventListener("click", function (e) {
-    e.preventDefault()
-    getId("heart-btn").classList.toggle("text-red-500")
-    if (toggole) {
-        countHeartClick++
-    } else {
-        countHeartClick--
-    }
-    toggole = !toggole;
-    document.getElementById("total-heart").innerText = `${countHeartClick}`
-    console.log("Heart Button clicked")
-})
+const heartButtons = getClass("heart-btn");
+for (const heartButton of heartButtons) {
+    // ---hover effect ---
+    heartButton.addEventListener("mouseover", function () {
+        heartButton.classList.add("text-red-500");
+    })
+    heartButton.addEventListener("mouseout", function () {
+        heartButton.classList.remove("text-red-500");
+    })
+    // ---- click event -----
+    heartButton.addEventListener("click", function () {
+        heartButton.classList.toggle("text-red-500");
+        const totalHeart = document.getElementById("total-heart").innerText;
+        const currentHeart = Number(totalHeart) + 1;
+        document.getElementById("total-heart").innerText = currentHeart;
+    })
+}
 
 // ...............  call button even handaling .......................
 const callButtons = getClass("call-btn");
 for (const callButoon of callButtons) {
     callButoon.addEventListener("click", function () {
-        // alert("Call Button Cliked");
+        // --- coin minus ----
+        const totalCoin = Number(getId("total-coin").innerText);
+        if (totalCoin <= 0) {
+            alert("আপনার পর্যাপ্ত কয়েন নেই । কল করতে কমপক্ষে ২০ কয়েন লাগবে।")
+            return
+        }
+        const newCoin = totalCoin - 20;
+        getId("total-coin").innerText = newCoin;
+
+        // ---add history---
         const cardTitle = callButoon.parentNode.parentNode.children[1].children[0].innerText
         const callNumber = callButoon.parentNode.parentNode.children[1].children[2].innerText
         const historyContainer = getId("history-container");
-        const newHistory =document.createElement("div");
+        const newHistory = document.createElement("div");
         newHistory.innerHTML = `
         <div class="history-card bg-gray-100 my-2 p-4 flex justify-between items-center rounded-lg">
                     <div>
@@ -45,11 +57,30 @@ for (const callButoon of callButtons) {
                 </div>
         `
         historyContainer.appendChild(newHistory)
+        alert(cardTitle + " " + callNumber);
         // console.log(cardTitle, callNumber,historyContainer)
     })
 }
 
+// ........... copy button even handalinhg ..............
+const copyBtns = getClass("copy-btn");
+for (const copyBtn of copyBtns) {
+    copyBtn.addEventListener("click", function () {
+        const callNumber = copyBtn.parentNode.parentNode.children[1].children[2].innerText;
+        // alert("নাম্বার কপি হয়েছে:" + " " + callNumber);
+        // ...copy count ...
+        const totalCopy = getId("total-copy").innerText;
+        const currenCopy = Number(totalCopy) + 1;
+        getId("total-copy").innerText = currenCopy;
+        // .... copy number ....
+        navigator.clipboard.writeText(callNumber).then(function () {
+            alert("নাম্বার কপি হয়েছে:" + " " + callNumber);
+        }).catch(function(err){
+            console.log("নাম্বার কপি হয় নি :" + " " + callNumber);
+        });
+    })
+}
 // ..............clear button event handaling ......................
-getId("clear-btn").addEventListener("click",function(){
-      getId("history-container").innerHTML="";
+getId("clear-btn").addEventListener("click", function () {
+    getId("history-container").innerHTML = "";
 })
