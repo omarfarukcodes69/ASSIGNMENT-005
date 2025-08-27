@@ -32,6 +32,14 @@ for (const heartButton of heartButtons) {
 // ...............  call button even handaling .......................
 const callButtons = getClass("call-btn");
 for (const callButoon of callButtons) {
+    // -----hover effect ----
+    callButoon.addEventListener("mouseover", function () {
+        callButoon.classList.add("bg-gray-400")
+    })
+    callButoon.addEventListener("mouseout", function () {
+        callButoon.classList.remove("bg-gray-400")
+    })
+
     callButoon.addEventListener("click", function () {
         // --- coin minus ----
         const totalCoin = Number(getId("total-coin").innerText);
@@ -65,6 +73,15 @@ for (const callButoon of callButtons) {
 // ........... copy button even handalinhg ..............
 const copyBtns = getClass("copy-btn");
 for (const copyBtn of copyBtns) {
+    // -----hover effect ----
+    copyBtn.addEventListener("mouseover", function () {
+        copyBtn.classList.add("bg-black")
+    })
+    copyBtn.addEventListener("mouseout", function () {
+        copyBtn.classList.remove("bg-black")
+    })
+
+
     copyBtn.addEventListener("click", function () {
         const callNumber = copyBtn.parentNode.parentNode.children[1].children[2].innerText;
         // alert("নাম্বার কপি হয়েছে:" + " " + callNumber);
@@ -75,7 +92,7 @@ for (const copyBtn of copyBtns) {
         // .... copy number ....
         navigator.clipboard.writeText(callNumber).then(function () {
             alert("নাম্বার কপি হয়েছে:" + " " + callNumber);
-        }).catch(function(err){
+        }).catch(function (err) {
             console.log("নাম্বার কপি হয় নি :" + " " + callNumber);
         });
     })
